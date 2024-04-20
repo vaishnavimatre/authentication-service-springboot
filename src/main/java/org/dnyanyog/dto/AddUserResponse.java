@@ -1,56 +1,80 @@
 package org.dnyanyog.dto;
 
+import org.dnyanyog.enumm.ResponseCode;
 import org.springframework.stereotype.Component;
 
 @Component
 public class AddUserResponse {
 	
+	
 private  String status;
 private String message;
-private  String user_id;
-private String user_name;
-private  String user_email;
-private String user_age;
-
-public String getStatus() {
-	return status;
-}
-public void setStatus(String status) {
-	this.status = status;
-}
-public String getMessage() {
-	return message;
-}
+private  long user_id;
+private String username;
+private String password;
 public void setMessage(String message) {
 	this.message = message;
 }
-public String getUser_id() {
+private String email;
+private String age;
+private UserData userData;
+
+public AddUserResponse getInstance() {
+	return new AddUserResponse();
+}
+public long getUser_id() {
 	return user_id;
 }
-public void setUser_id(String user_id) {
+public AddUserResponse setUser_id(long user_id) {
 	this.user_id = user_id;
+	return this;
 }
-public String getUser_name() {
-	return user_name;
+public String getUsername() {
+	return username;
 }
-public void setUser_name(String user_name) {
-	this.user_name = user_name;
+public AddUserResponse setUsername(String username) {
+	this.username = username;
+	return this;
 }
-public String getUser_email() {
-	return user_email;
+public UserData getUserData() {
+	return userData;
 }
-public void setUser_email(String user_email) {
-	this.user_email = user_email;
+public AddUserResponse setUserData(UserData userData) {
+	this.userData = userData;
+	return this;
 }
-public String getUser_age() {
-	return user_age;
+public String getEmail() {
+	return email;
 }
-public void setUser_age(String user_age) {
-	this.user_age = user_age;
+public String getPassword() {
+	return password;
 }
+public AddUserResponse setPassword(String password) {
+	this.password = password;
+	return this;
+}
+public AddUserResponse setEmail(String email) {
+	this.email = email;
+	return this;
+}
+public String getAge() {
+	return age;
+}
+public AddUserResponse setAge(String age) {
+	this.age = age;
+	return this;
+}
+	public String getStatus() {
+		return status;
+	}
+	public AddUserResponse setStatus(String status) {
+		this.status = status;
+		return this;
+	}
+	public String getMessage() {
+		return message;
+	}
 
 
-
-
-
+	
 }
