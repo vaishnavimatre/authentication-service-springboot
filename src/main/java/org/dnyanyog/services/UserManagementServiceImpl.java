@@ -16,7 +16,7 @@ import org.dnyanyog.dto.DiscountResponse;
 import org.dnyanyog.dto.User;
 import org.dnyanyog.encrypt.EncryptionUtils;
 import org.dnyanyog.entity.Discount;
-import org.dnyanyog.entity.Users;
+import org.dnyanyog.entity.Userss;
 import org.dnyanyog.enumm.ResponseCode;
 import org.dnyanyog.repo.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ EncryptionUtils encrypt;
 public Optional<AddUserResponse>  addUpdateUser(AddUserRequest request) throws Exception {
 	
 	  
-	Users UsersTable= Users.getInstance()
+	Userss UsersTable= Userss.getInstance()
 		.setAge(request.getAge())
 	    .setEmail(request.getEmail())
 	     .setPassword(encrypt.encrypt(request.getPassword()))
@@ -69,9 +69,9 @@ public Optional<AddUserResponse>  addUpdateUser(AddUserRequest request) throws E
 public AddUserResponse  UpdateUser(Long user_id, AddUserRequest request){
 	
 	  
-	Optional<Users>receivedData=userRepo.findById(user_id);
+	Optional<Userss>receivedData=userRepo.findById(user_id);
 	if(receivedData.isPresent()) {
-			Users UsersTable=Users.getInstance()
+			Userss UsersTable=Userss.getInstance()
 				 .setAge(request.getAge())
 				 .setEmail(request.getEmail())
 			     .setPassword(request.getPassword())
@@ -100,12 +100,12 @@ public AddUserResponse  UpdateUser(Long user_id, AddUserRequest request){
 public User getSingleUser(Long userId) {
 	User userResponse =new User();
 	
-	Optional<Users>receivedData=userRepo.findById(userId);
+	Optional<Userss>receivedData=userRepo.findById(userId);
 	if(receivedData.isEmpty()) {
 		userResponse.setStatus(ResponseCode.USER_NOT_FOUND.getStatus());
 		userResponse.setMessage(ResponseCode.USER_NOT_FOUND.getMessage());
 			}else {
-				Users user=receivedData.get();
+				Userss user=receivedData.get();
 				userResponse.setStatus(ResponseCode.USER_FOUND.getStatus());
 				userResponse.setMessage(ResponseCode.USER_FOUND.getMessage());
 				userResponse.setUser_id(user.getUser_id());
@@ -123,7 +123,7 @@ public User getSingleUser(Long userId) {
 public void deletetSingleUser(Long user_id) {
 	User userResponse =new User();
 	
-	Optional<Users>receivedData=userRepo.findById(user_id);
+	Optional<Userss>receivedData=userRepo.findById(user_id);
 	if(receivedData.isPresent()) {
 		userRepo.deleteById(user_id);
 		userResponse.setUser_id(user_id);		
@@ -135,7 +135,7 @@ public void deletetSingleUser(Long user_id) {
 	
 	
 }
-public List<Users>getAllUser(){
+public List<Userss>getAllUser(){
 	return userRepo.findAll();
 }
 

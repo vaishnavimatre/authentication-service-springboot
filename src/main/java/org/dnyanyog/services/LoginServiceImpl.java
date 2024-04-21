@@ -11,7 +11,7 @@ import org.dnyanyog.repo.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.dnyanyog.entity.Discount;
-import org.dnyanyog.entity.Users;
+import org.dnyanyog.entity.Userss;
 
 @Service
 public class LoginServiceImpl implements  LoginService{
@@ -26,9 +26,9 @@ EncryptionUtils encrypt;
 	
 	public LoginResponse validateUser(LoginRequest loginRequest) throws Exception {
 		LoginResponse response =new LoginResponse();
-		List<Users>liUser =userRepo.findByUsername(loginRequest.getUsername());
+		List<Userss>liUser =userRepo.findByUsername(loginRequest.getUsername());
 		if(liUser.size()==1) {
-			Users userData = liUser.get(0);
+			Userss userData = liUser.get(0);
 			String encryptedPassword =userData.getPassword();
 			String getencryptedPassword = encrypt.encrypt(loginRequest.getPassword());
 			if( getencryptedPassword.equalsIgnoreCase(encryptedPassword)) {

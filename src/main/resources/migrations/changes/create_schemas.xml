@@ -6,11 +6,5 @@
             CREATE SCHEMA IF NOT EXISTS authentication_service_db1;
         </sql>
     </changeSet>
-    
-    <changeSet author="Vaishnavi Matre" id="202200717_1">
-        <sql stripComments="true">
-            CREATE SCHEMA IF NOT EXISTS authentication_service_db1_1;
-        </sql>
-    </changeSet>
 
 </databaseChangeLog>

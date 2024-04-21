@@ -11,7 +11,7 @@ import org.dnyanyog.dto.AddUserRequest;
 import org.dnyanyog.dto.AddUserResponse;
 import org.dnyanyog.dto.DiscountRequest;
 import org.dnyanyog.dto.DiscountResponse;
-import org.dnyanyog.entity.Users;
+import org.dnyanyog.entity.Userss;
 //import org.dnyanyog.services.LoginServiceImpl;
 import org.dnyanyog.services.UserManagementServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +52,7 @@ public class UserManagementController {
 		return userService.UpdateUser( userId,userRequest);
 	}
 	@GetMapping(path="/auth/user")
-	public List<Users>getAllUser(){
+	public List<Userss>getAllUser(){
 		return userService.getAllUser();
 	}
 	@GetMapping(path="/auth/user_ids")

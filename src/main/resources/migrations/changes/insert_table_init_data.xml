@@ -13,4 +13,31 @@
 			<column name="gender" value="FEMALE" />
 		</insert>
 	</changeSet>
+	<changeSet author="Vaishnavi matre" id="20220717-1">
+		<insert schemaName="authentication_service_db1" tableName="Userss">
+			<column name="user_code" value="2" />
+			<column name="user_id" value="103" />
+			<column name="username" value="shreya" />
+			<column name="password" value="test@123" />
+			<column name="email" value="shreyapatil9@gmail.com" />
+			<column name="age" value="21" />
+			<column name="gender" value="FEMALE" />
+		</insert>
+	</changeSet>
+	<changeSet author="Vaishnavi matre" id="20220717-2">
+		<insert schemaName="authentication_service_db1" tableName="Userss">
+			<column name="user_code" value="3" />
+			<column name="user_id" value="104" />
+			<column name="username" value="omkar" />
+			<column name="password" value="matre@123" />
+			<column name="email" value="omkarmatre333@gmail.com" />
+			<column name="age" value="23" />
+			<column name="gender" value="MALE" />
+		</insert>
+	</changeSet>
+	
 </databaseChangeLog>
+
+
+
+

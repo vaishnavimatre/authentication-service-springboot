@@ -11,7 +11,7 @@ import java.util.List;
 import org.dnyanyog.dto.LoginResponse;
 import org.dnyanyog.dto.User;
 import org.dnyanyog.entity.Discount;
-import org.dnyanyog.entity.Users;
+import org.dnyanyog.entity.Userss;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Component;
@@ -20,9 +20,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 @Component
-public interface UsersRepository  extends JpaRepository< Users, Long>{
+public interface UsersRepository  extends JpaRepository< Userss, Long>{
 
-	List<Users> findByUsername(String username);
+	List<Userss> findByUsername(String username);
  
  
 	List<User>findByEmail(String email);

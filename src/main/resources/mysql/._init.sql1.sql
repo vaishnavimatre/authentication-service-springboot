@@ -99,5 +99,9 @@ create database notification_service_db;
 use notification_service_db;
 show tables;
 select * from notification;
-
-create database authentication_service_db1;
+create database authentication_service_db;
+use authentication_service_db;
+show tables;
+select * from users1;
+create database customer_service_db;
+use customer_service_db;
